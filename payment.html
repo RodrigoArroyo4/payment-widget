@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f3f4f6;
+            text-align: center;
+        }
+
+        .payment-box {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .payment-box h3 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .payment-box input {
+            margin-bottom: 15px;
+            padding: 10px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .payment-box button {
+            background-color: #007AFF;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .payment-box button:hover {
+            background-color: #005bb5;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="payment-box">
+        <h3>Complete Your Payment</h3>
+        <input type="text" placeholder="Card Number" /><br />
+        <input type="text" placeholder="Expiry (MM/YY)" /><br />
+        <input type="text" placeholder="CVV" /><br />
+        <button onclick="submitPayment()">Pay Now</button>
+    </div>
+
+    <script>
+        function submitPayment() {
+            // Simulate payment success
+            window.parent.postMessage({ status: 'success', message: 'Payment completed successfully!' }, '*');
+            alert('Payment successful!');
+            window.parent.location.reload();
+        }
+    </script>
+
+</body>
+</html>
